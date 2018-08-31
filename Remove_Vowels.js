@@ -1,15 +1,13 @@
 function removeVowels(str) {
-    if (!str && str == "") {
-        return '';
+    if (!str && str === "") {
+        return "";
     }
-    let result = "", char = str.charAt(0);
-    if (str.length > 0 && !(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' )) {
-        result += char;
+    const char = str.charAt(0);
+    if ((char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' )) {
+        return  "" + removeVowels(str.substring(1));
     }
-    result += removeVowels(str.substring(1));
-    return result;
+    return  char + removeVowels(str.substring(1));
  }
- 
  console.log(removeVowels('horse'));
  console.log(removeVowels('robot'));
  console.log(removeVowels(''));
